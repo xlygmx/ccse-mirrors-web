@@ -8,7 +8,7 @@ next: false
 
 ## Introduction
 
-[Arch Linux](https://manjaro.org/) is a famous rolling-release Linux distribution which follows the [KISS principle](https://en.wikipedia.org/wiki/KISS_principle).
+[Arch Linux](https://archlinux.org/) is a famous rolling-release Linux distribution which follows the [KISS principle](https://en.wikipedia.org/wiki/KISS_principle).
 
 ## Configuration
 
