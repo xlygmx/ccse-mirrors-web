@@ -17,6 +17,8 @@ next: false
 - 邮件：[cra@sustech.edu.cn](mailto:cra@sustech.edu.cn)
 - 反馈问题：[CRA Commuinty 镜像站板块](https://c.cra.moe/c/cra-service/mirrors/9) （请使用学校邮箱注册/CAS登入）或 [https://github.com/sustech-cra/issues/](https://github.com/sustech-cra/issues/)
 
+<iframe src="https://mirrors.sustech.edu.cn/site/mirrors/map.html" name="sustech_map" width="100%" height="320" scrolling="no" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>
+
 <img src="./tuna-sustech.svg" alt="W3C WAI-AA WCAG 2.1" width="400">
 
 <img src="./wcag2.1AA-blue-v.png" alt="W3C WAI-AA WCAG 2.1" width="88" height="32">
