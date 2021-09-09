@@ -45,3 +45,7 @@ Path of the per-user configuration file:
 - Linux: `$HOME/.condarc`
 - macOS: `$HOME/.condarc`
 - Windows: `C:\Users\<YourUserName>\.condarc`
+
+## Using Anaconda at SUSTech HPC Cluster
+
+Please refer to this [link](https://hpc.sustech.edu.cn/ref/anaconda-install-by-user.html).

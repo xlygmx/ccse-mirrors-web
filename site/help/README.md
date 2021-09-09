@@ -16,4 +16,6 @@ next: false
 | ppa.launchpad.net                  | ppa-launchpad.acceleration.cra.moe |
 
 
+## HPC用户手册
 
+请参考[此链接](https://hpc.sustech.edu.cn/userguide.html)。
