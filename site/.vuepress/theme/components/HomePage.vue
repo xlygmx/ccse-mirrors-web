@@ -6,6 +6,24 @@
       </div>
       <div class="right-sidebar">
         <NewsPanel :pages="pages" basePath="/news/"/>
+        <div>
+          <b-button v-b-modal.modal-1>获取下载链接</b-button>
+
+          <b-modal id="modal-1" title="获取安装镜像" hide-footer scrollable size="xl" >
+            <div>
+              <b-tabs content-class="mt-3">
+                <b-tab title="操作系统" active>
+                    <b-tabs pills card vertical>
+                      <b-tab title="Tab 1" active><b-card-text>Tab contents 1</b-card-text></b-tab>
+                      <b-tab title="Tab 2"><b-card-text>Tab contents 2</b-card-text></b-tab>
+                      <b-tab title="Tab 3"><b-card-text>Tab contents 3</b-card-text></b-tab>
+                    </b-tabs>
+                </b-tab>
+                <b-tab title="应用软件"><p>I'm the second tab</p></b-tab>
+              </b-tabs>
+            </div>
+          </b-modal>
+        </div>
       </div>
     </div>
     <footer class="footer">
