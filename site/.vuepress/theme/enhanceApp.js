@@ -1,8 +1,7 @@
 import feather from 'vue-icon'
+
 // import bootstrap
 import BootstrapVue from 'bootstrap-vue'
-import 'bootstrap/dist/css/bootstrap.css'
-import 'bootstrap-vue/dist/bootstrap-vue.css'
 
 export default ({
   Vue,

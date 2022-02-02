@@ -6,10 +6,10 @@
       </div>
       <div class="right-sidebar">
         <NewsPanel :pages="pages" basePath="/news/"/>
-        <div>
+        <div class="download-wrapper">
           <b-button v-b-modal.isomodal>获取下载链接</b-button>
 
-          <b-modal id="isomodal" title="获取安装镜像" hide-footer scrollable size="xl" >
+          <b-modal id="isomodal" title="获取安装镜像" static hide-footer scrollable size="xl">
             <div>
               <b-tabs content-class="mt-3">
                 <b-tab title="操作系统">
@@ -146,3 +146,11 @@ $rightWrapper
   @extend $leftWrapper
   padding 0.5rem 0
 </style>
+
+<style lang="scss" scoped>
+.download-wrapper ::v-deep {
+  @import "~bootstrap/scss/bootstrap";
+}
+</style>
+
+<style lang="css" src="bootstrap-vue/dist/bootstrap-vue.min.css"></style>
