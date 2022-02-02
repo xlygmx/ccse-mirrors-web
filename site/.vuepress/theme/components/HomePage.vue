@@ -7,19 +7,31 @@
       <div class="right-sidebar">
         <NewsPanel :pages="pages" basePath="/news/"/>
         <div>
-          <b-button v-b-modal.modal-1>获取下载链接</b-button>
+          <b-button v-b-modal.isomodal>获取下载链接</b-button>
 
-          <b-modal id="modal-1" title="获取安装镜像" hide-footer scrollable size="xl" >
+          <b-modal id="isomodal" title="获取安装镜像" hide-footer scrollable size="xl" >
             <div>
               <b-tabs content-class="mt-3">
-                <b-tab title="操作系统" active>
+                <b-tab title="操作系统">
                     <b-tabs pills card vertical>
-                      <b-tab title="Tab 1" active><b-card-text>Tab contents 1</b-card-text></b-tab>
-                      <b-tab title="Tab 2"><b-card-text>Tab contents 2</b-card-text></b-tab>
-                      <b-tab title="Tab 3"><b-card-text>Tab contents 3</b-card-text></b-tab>
+                      <b-tab v-for="item in this.isoinfo.filter(item => item.category === 'os')" :key="item.distro" :title='item.distro'>
+                        <h3>{{item.distro}}</h3>
+                        <ul>
+                          <li v-for="arry in item.urls" :key="arry.url"><a :href="arry.url">{{arry.name}}</a></li>
+                        </ul>
+                      </b-tab>
                     </b-tabs>
                 </b-tab>
-                <b-tab title="应用软件"><p>I'm the second tab</p></b-tab>
+                <b-tab title="应用软件">
+                  <b-tabs pills card vertical>
+                    <b-tab v-for="item in this.isoinfo.filter(item => item.category === 'app')" :key="item.distro" :title='item.distro'>
+                      <h3>{{item.distro}}</h3>
+                      <ul>
+                        <li v-for="arry in item.urls" :key="arry.url"><a :href="arry.url">{{arry.name}}</a></li>
+                      </ul>
+                    </b-tab>
+                  </b-tabs>
+                </b-tab>
               </b-tabs>
             </div>
           </b-modal>
@@ -37,12 +49,30 @@
 </template>
 
 <script>
+import { get } from "axios"
 import MirrorsIndex from '@theme/components/MirrorsIndex.vue'
 import NewsPanel from '@theme/components/NewsPanel.vue'
 
 export default {
   components: { MirrorsIndex, NewsPanel },
-  props: ['sidebarItems', 'pages']
+  props: ['sidebarItems', 'pages'],
+  created () {
+    this.loadisoinfo()
+  },
+  data() {
+    return {
+      isoinfo: [],
+    }
+  },
+  methods: {
+    loadisoinfo () {
+      get("/isoinfo.json")
+        .then((resp) => {
+          this.isoinfo = resp.data
+        })
+        .catch((err) => console.error(err))
+    },
+  }
 }
 </script>
 
