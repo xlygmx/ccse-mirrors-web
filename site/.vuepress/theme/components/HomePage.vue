@@ -7,8 +7,7 @@
       <div class="right-sidebar">
         <NewsPanel :pages="pages" basePath="/news/"/>
         <div class="download-wrapper">
-          <b-button v-b-modal.isomodal>获取下载链接</b-button>
-
+          <b-button v-b-modal.isomodal variant="outline-primary">获取下载链接</b-button>
           <b-modal id="isomodal" title="获取安装镜像" static hide-footer scrollable size="xl">
             <div>
               <b-tabs content-class="mt-3">
@@ -52,9 +51,10 @@
 import { get } from "axios"
 import MirrorsIndex from '@theme/components/MirrorsIndex.vue'
 import NewsPanel from '@theme/components/NewsPanel.vue'
+import IsoModalPanel from '@theme/components/IsoModalPanel.vue'
 
 export default {
-  components: { MirrorsIndex, NewsPanel },
+  components: { MirrorsIndex, NewsPanel, IsoModalPanel },
   props: ['sidebarItems', 'pages'],
   created () {
     this.loadisoinfo()
@@ -66,7 +66,7 @@ export default {
   },
   methods: {
     loadisoinfo () {
-      get("/isoinfo.json")
+      get("//mirrors.sustech.edu.cn/isoinfo.json")
         .then((resp) => {
           this.isoinfo = resp.data
         })
