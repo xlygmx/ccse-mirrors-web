@@ -4,7 +4,7 @@
       <v-icon name="download"/>&nbsp;
       {{ (text ? text.title : null) || "Downloads" }}
     </h3>
-    <div class="description">常用发行版 ISO 和应用工具安装包直接下载。</div>
+    <div class="description">提供各大主流 Linux 发行版的安装镜像 / ISO 文件和应用工具安装包。</div>
     <div class="panel-content">
       <div class="download-wrapper">
         <b-button v-b-modal.isomodal variant="outline-primary">获取下载链接</b-button>
