@@ -13,7 +13,7 @@
             <b-tabs content-class="mt-3">
               <b-tab title="操作系统">
                 <b-tabs pills card vertical>
-                  <b-tab v-for="item in this.isoinfo.filter(item => item.category === 'os')" :key="item.distro"
+                  <b-tab v-for="item in osList" :key="item.distro"
                          :title='item.distro'>
                     <h4>{{ item.distro }}</h4>
                     <ul>
@@ -24,7 +24,7 @@
               </b-tab>
               <b-tab title="应用软件">
                 <b-tabs pills card vertical>
-                  <b-tab v-for="item in this.isoinfo.filter(item => item.category === 'app')" :key="item.distro"
+                  <b-tab v-for="item in appList" :key="item.distro"
                          :title='item.distro'>
                     <h4>{{ item.distro }}</h4>
                     <ul>
@@ -61,6 +61,18 @@ export default {
     return {
       isoinfo: [],
     }
+  },
+  computed: {
+    osList() {
+      return this.isoinfo.filter(x => x.category === 'os').sort(function (a, b) {
+        return ('' + a.distro).localeCompare(b.distro)
+      });
+    },
+    appList() {
+      return this.isoinfo.filter(x => x.category === 'app').sort(function (a, b) {
+        return ('' + a.distro).localeCompare(b.distro)
+      });
+    },
   },
   methods: {
     loadisoinfo() {
