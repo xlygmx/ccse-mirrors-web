@@ -39,6 +39,7 @@ custom_channels:
   menpo: https://mirrors.sustech.edu.cn/anaconda/cloud
   pytorch: https://mirrors.sustech.edu.cn/anaconda/cloud
   simpleitk: https://mirrors.sustech.edu.cn/anaconda/cloud
+  nvidia: https://mirrors.sustech.edu.cn/anaconda-extra/cloud
 ```
 
 Path of the per-user configuration file:
