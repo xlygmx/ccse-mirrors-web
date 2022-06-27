@@ -14,19 +14,19 @@ next: false
 
 首先信任 GPG 公钥:
 
-```shell
+``` sh
 wget -qO - https://packages.adoptium.net/artifactory/api/gpg/key/public | apt-key add -
 ```
 
 以Ubuntu 20.04 LTS 为例，在`/etc/apt/sources.list.d/Adoptium.list`中新增一行（其他版本请将`focal`修改为响应的版本代号）：
 
-```bash
+``` sh
 deb https://mirrors.sustech.edu.cn/Adoptium/deb focal main
 ```
 
 执行：
 
-```bash
+``` sh
 sudo apt-get update
 ```
 
@@ -47,7 +47,7 @@ gpgkey=https://packages.adoptium.net/artifactory/api/gpg/key/public
 
 再执行
 
-```shell
+``` sh
 sudo yum makecache
 ```
 
