@@ -32,7 +32,7 @@ sudo apt-get update
 
 使用`sudo apt-get install temurin-<version>-jdk`安装软件包，例如`temurin-17-jdk`和 `temurin-8-jdk`。
 
-### CentOS/RHEL
+## CentOS/RHEL
 
 新建`/etc/yum.repos.d/Adoptium.repo`，内容为
 
